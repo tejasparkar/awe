@@ -1,17 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Suspense } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-import Techlottie from './techlottie'
 import Tilt from 'react-tilt'
-import Seolottie from './seolottie';
-import Smmlottie from './smmlottie';
-import Production from './production'
-import Benifits from './benifits';
-import Footer from './footer';
+const Seolottie = React.lazy(()=>import('./seolottie'));
+const Techlottie = React.lazy(()=>import('./techlottie'));
+const Smmlottie = React.lazy(()=>import('./smmlottie'));
+const Production = React.lazy(()=>import('./production'));
+const Benifits = React.lazy(()=>import('./benifits'));
+const Footer = React.lazy(()=>import('./footer'));
 
 const Components = () => {
     return (
         <React.Fragment>
-    
+        
         <ScrollAnimation animateIn='bounceInRight'
         animateOut='bounceOutLeft' delay="450">
         <section id="services" className="services  ">
@@ -19,9 +19,9 @@ const Components = () => {
     
     
     
-          <div className="row">
+          <div className="row" >
           
-          <div className="col-lg-6 order-2 order-lg-1">
+          <div className="col-lg-6 order-2 order-lg-1" style={{ 'background-color':'black','opacity':'0.7','border-radius':'3%' , 'padding': '2rem' }}>
             <Tilt>
             <ScrollAnimation animateIn='tada'
             animateOut='bounceOutLeft' delay="1000">
@@ -35,8 +35,8 @@ const Components = () => {
             animateOut='bounceOutLeft' delay="10">
             <div className="icon-box mt-5 mt-lg-0  " >
             <i class='bx bx-search-alt'></i>
-            <h4  style={{'fontWeight':'900','color':'red' }}>Keyword Research</h4>
-            <p  style={{'fontWeight':'900','color':'red' }}>Keyword phrase research involves identifying a group of keyword phrases that will be used in optimization.</p>
+            <h4  style={{'fontWeight':'900','color':'white' }}>Keyword Research</h4>
+            <p  style={{'fontWeight':'900','color':'white' }}>Keyword phrase research involves identifying a group of keyword phrases that will be used in optimization.</p>
           </div>
             </ScrollAnimation>
              
@@ -44,9 +44,9 @@ const Components = () => {
             animateOut='bounceOutLeft' delay="150">
               <div className="icon-box mt-5" >
               <i class='bx bxs-report' ></i>
-                <h4  style={{'fontWeight':'900','color':'red' }}>Reporting & Goal Setting.
+                <h4  style={{'fontWeight':'900','color':'white' }}>Reporting & Goal Setting.
                 </h4>
-                <p  style={{'fontWeight':'900','color':'red' }}>After establishing your targeted keyword phrases and starting position relative to the site’s competitive set, it is important to understand what the subject site’s starting position is within the search engines</p>
+                <p  style={{'fontWeight':'900','color':'white' }}>After establishing your targeted keyword phrases and starting position relative to the site’s competitive set, it is important to understand what the subject site’s starting position is within the search engines</p>
               </div>
             </ScrollAnimation>
     
@@ -54,8 +54,8 @@ const Components = () => {
             animateOut='bounceOutLeft' delay="250">
             <div className="icon-box mt-5" >
             <i class='bx bxs-book-content' ></i>
-            <h4  style={{'fontWeight':'900','color':'red' }}>Content Building</h4>
-            <p  style={{'fontWeight':'900','color':'red' }}>Content is king in search engine optimization. The search engines love text; high volume, high-quality content related to your business will serve you in a couple of important ways.</p>
+            <h4  style={{'fontWeight':'900','color':'white' }}>Content Building</h4>
+            <p  style={{'fontWeight':'900','color':'white' }}>Content is king in search engine optimization. The search engines love text; high volume, high-quality content related to your business will serve you in a couple of important ways.</p>
           </div>
             </ScrollAnimation>
              
@@ -63,27 +63,30 @@ const Components = () => {
             animateOut='bounceOutLeft' delay="350">
               <div className="icon-box mt-5" >
               <i class='bx bxs-network-chart' ></i>
-                <h4  style={{'fontWeight':'900','color':'red' }}>Social & Link Building.</h4>
-                <p  style={{'fontWeight':'900','color':'red' }}>In marketing, you fish where the fish are.  And, the fish are using social media in increasing numbers.  The power of online sharing through social media provides tremendous opportunities for companies willing to commit the time to using it.</p>
+                <h4  style={{'fontWeight':'900','color':'white' }}>Social & Link Building.</h4>
+                <p  style={{'fontWeight':'900','color':'white' }}>In marketing, you fish where the fish are.  And, the fish are using social media in increasing numbers.  The power of online sharing through social media provides tremendous opportunities for companies willing to commit the time to using it.</p>
               </div>
             </ScrollAnimation>
             </div>
+            <Suspense fallback={<div>Loading....</div>}>
             <div  className="col-lg-6 order-2 order-lg-2" >
             <Tilt>
             <ScrollAnimation animateIn='bounceInRight'
             animateOut='bounceOutLeft' delay="450">
+           
                 <Seolottie  />
+           
             </ScrollAnimation>
             </Tilt>
             </div>
-    
+            </Suspense>
     
           </div>
          
         </div>
       </section>
       </ScrollAnimation>
-         
+        
             
     
             <ScrollAnimation animateIn='bounceInRight'
@@ -94,7 +97,7 @@ const Components = () => {
     
     
                   <div className="row ">
-                    <div className="col-lg-6 order-2 order-lg-1 ">
+                    <div style={{ 'background-color':'black','opacity':'0.7','border-radius':'3%','padding': '2rem' }} className="col-lg-6 order-2 order-lg-1 ">
                     <Tilt>
                     <ScrollAnimation animateIn='tada'
                           animateOut='bounceOutLeft' delay="1000">
@@ -108,43 +111,46 @@ const Components = () => {
                     animateOut='bounceOutLeft' delay="10">
                       <div className="icon-box mt-5 mt-lg-0  " >
                       <i class='bx bxs-bullseye' ></i>
-                        <h4  style={{'fontWeight':'900','color':'red' }}>Analyze & Develop a Social Media Strategy</h4>
-                        <p  style={{'fontWeight':'900','color':'red' }}>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                        <h4  style={{'fontWeight':'900','color':'white' }}>Analyze & Develop a Social Media Strategy</h4>
+                        <p  style={{'fontWeight':'900','color':'white' }}>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                       </div>
                     </ScrollAnimation>
                     <ScrollAnimation animateIn='bounceInRight'
                     animateOut='bounceOutLeft' delay="150">
                       <div className="icon-box mt-5" >
                       <i class='bx bxs-face' ></i>
-                        <h4  style={{'fontWeight':'900','color':'red' }}> Account Creation</h4>
-                        <p  style={{'fontWeight':'900','color':'red' }}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        <h4  style={{'fontWeight':'900','color':'white' }}> Account Creation</h4>
+                        <p  style={{'fontWeight':'900','color':'white' }}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                       </div>
                     </ScrollAnimation>
                     <ScrollAnimation animateIn='bounceInRight'
                     animateOut='bounceOutLeft' delay="250">
                       <div className="icon-box mt-5" >
                       <i class='bx bx-calendar-star' ></i>
-                        <h4  style={{'fontWeight':'900','color':'red' }}>Campaign Creation</h4>
-                        <p  style={{'fontWeight':'900','color':'red' }}>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                        <h4  style={{'fontWeight':'900','color':'white' }}>Campaign Creation</h4>
+                        <p  style={{'fontWeight':'900','color':'white' }}>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
                       </div>
                     </ScrollAnimation>
                     <ScrollAnimation animateIn='bounceInRight'
                     animateOut='bounceOutLeft' delay="350">
                       <div className="icon-box mt-5" >
                       <i class='bx bxs-traffic' ></i>
-                        <h4  style={{'fontWeight':'900','color':'red' }}>Drive Traffic To Your Website</h4>
-                        <p  style={{'fontWeight':'900','color':'red' }}>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                        <h4  style={{'fontWeight':'900','color':'white' }}>Drive Traffic To Your Website</h4>
+                        <p  style={{'fontWeight':'900','color':'white' }}>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
                       </div>
                     </ScrollAnimation>
                     </div>
+                    <Suspense fallback={<div>Loading....</div>}>
                     <div className="col-lg-6 order-2 order-lg-2" >
                     <Tilt>
                     <ScrollAnimation animateIn='bounceInRight'
                     animateOut='bounceOutLeft' delay="450">
+                    
                        <Smmlottie/>
                     </ScrollAnimation>
                     </Tilt>
                     </div>
+                    </Suspense>
     
                   </div>
     
@@ -162,7 +168,7 @@ const Components = () => {
     
                     <div className="row">
     
-                      <div className="col-lg-6 order-2 order-lg-1 " >
+                      <div className="col-lg-6 order-2 order-lg-1 " style={{ 'background-color':'black','opacity':'0.7','border-radius':'3%','padding': '2rem' }} >
                       <Tilt>
                         <ScrollAnimation animateIn='tada'
                           animateOut='bounceOutLeft' delay="1000">
@@ -176,8 +182,8 @@ const Components = () => {
                           animateOut='bounceOutLeft' delay="150">
                           <div className="icon-box mt-5 mt-lg-0  " >
                           <i class='bx bx-code' ></i>
-                            <h4  style={{'fontWeight':'900','color':'red' }}>Web Development & Designing</h4>
-                            <p  style={{'fontWeight':'900','color':'red' }}>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                            <h4  style={{'fontWeight':'900','color':'white' }}>Web Development & Designing</h4>
+                            <p  style={{'fontWeight':'900','color':'white' }}>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                           </div>
                         </ScrollAnimation>
     
@@ -186,8 +192,8 @@ const Components = () => {
                         animateOut='bounceOutLeft' delay="250">
                         <div className="icon-box mt-5" >
                         <i class='bx bxl-figma' ></i>
-                          <h4  style={{'fontWeight':'900','color':'red' }}>Wireframes Development</h4>
-                          <p  style={{'fontWeight':'900','color':'red' }}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                          <h4  style={{'fontWeight':'900','color':'white' }}>Wireframes Development</h4>
+                          <p  style={{'fontWeight':'900','color':'white' }}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                         </div>
                         </ScrollAnimation>
     
@@ -195,21 +201,22 @@ const Components = () => {
                         animateOut='bounceOutLeft' delay="350">
                         <div className="icon-box mt-5"  >
                         <i class='bx bxl-android' ></i>
-                          <h4  style={{'fontWeight':'900','color':'red' }}>Android App development</h4>
-                          <p  style={{'fontWeight':'900','color':'red' }}>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                          <h4  style={{'fontWeight':'900','color':'white' }}>Android App development</h4>
+                          <p  style={{'fontWeight':'900','color':'white' }}>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
                         </div>
                         </ScrollAnimation>
                         <ScrollAnimation animateIn='bounceInRight'
                         animateOut='bounceOutLeft' delay="450">
                         <div className="icon-box mt-5"  >
                         <i class='bx bxl-apple' ></i>
-                          <h4  style={{'fontWeight':'900','color':'red' }}>iOS App development</h4>
-                          <p  style={{'fontWeight':'900','color':'red' }}>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                          <h4  style={{'fontWeight':'900','color':'white' }}>iOS App development</h4>
+                          <p  style={{'fontWeight':'900','color':'white' }}>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
                         </div>
                         </ScrollAnimation>
                         
     
                       </div>
+                      <Suspense fallback={<div>Loading....</div>}>
                       <div className="col-lg-6 order-2 order-lg-2 " >
                       <Tilt>
                       <ScrollAnimation animateIn='bounceInRight'
@@ -218,6 +225,7 @@ const Components = () => {
                        </ScrollAnimation>
                        </Tilt>
                       </div>
+                      </Suspense>
     
                     </div>
     
@@ -234,7 +242,7 @@ const Components = () => {
     
     
                   <div className="row" >
-                    <div className="col-lg-6 order-2 order-lg-1">
+                    <div className="col-lg-6 order-2 order-lg-1" style={{ 'background-color':'black','opacity':'0.7','border-radius':'3%','padding':'2rem' }}>
                     <Tilt>
                     <ScrollAnimation animateIn='tada'
                     animateOut='bounceOutLeft' delay="1000">
@@ -248,8 +256,8 @@ const Components = () => {
                     animateOut='bounceOutLeft' delay="10">
                     <div className="icon-box mt-5 mt-lg-0  " >
                     <i class='bx bxs-film' ></i>
-                    <h4  style={{'fontWeight':'900','color':'red' }}>Film Production</h4>
-                    <p  style={{'fontWeight':'900','color':'red' }}>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4  style={{'fontWeight':'900','color':'white' }}>Film Production</h4>
+                    <p  style={{'fontWeight':'900','color':'white' }}>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                   </div>
                     </ScrollAnimation>
                      
@@ -257,8 +265,8 @@ const Components = () => {
                     animateOut='bounceOutLeft' delay="150">
                       <div className="icon-box mt-5" >
                       <i class='bx bxs-video-recording' ></i>
-                        <h4  style={{'fontWeight':'900','color':'red' }}>Video Production</h4>
-                        <p  style={{'fontWeight':'900','color':'red' }}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        <h4  style={{'fontWeight':'900','color':'white' }}>Video Production</h4>
+                        <p  style={{'fontWeight':'900','color':'white' }}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                       </div>
                     </ScrollAnimation>
     
@@ -266,8 +274,8 @@ const Components = () => {
                     animateOut='bounceOutLeft' delay="250">
                     <div className="icon-box mt-5">
                     <i class='bx bxs-magic-wand' ></i>
-                    <h4  style={{'fontWeight':'900','color':'red' }}>Visual Effects </h4>
-                    <p  style={{'fontWeight':'900','color':'red' }}>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4  style={{'fontWeight':'900','color':'white' }}>Visual Effects </h4>
+                    <p  style={{'fontWeight':'900','color':'white' }}>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
                   </div>
                     </ScrollAnimation>
                      
@@ -275,11 +283,12 @@ const Components = () => {
                     animateOut='bounceOutLeft' delay="350">
                       <div className="icon-box mt-5" >
                       <i class='bx bxl-adobe' ></i>
-                        <h4  style={{'fontWeight':'900','color':'red' }}>After Effects Animation</h4>
-                        <p  style={{'fontWeight':'900','color':'red' }}>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                        <h4  style={{'fontWeight':'900','color':'white' }}>After Effects Animation</h4>
+                        <p  style={{'fontWeight':'900','color':'white' }}>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
                       </div>
                     </ScrollAnimation>
                     </div>
+                    <Suspense fallback={<div>Loading....</div>}>
                     <div className="col-lg-6 order-2 order-lg-2" >
                     <Tilt>
                     <ScrollAnimation animateIn='bounceInRight'
@@ -289,7 +298,7 @@ const Components = () => {
                     </Tilt>
                     </div>
     
-    
+                  </Suspense>
                   </div>
     
                 </div>
@@ -297,11 +306,17 @@ const Components = () => {
               </section>
              
               </ScrollAnimation>
-             <Benifits/>
-              <Footer/>
+              <Suspense fallback={<div>Loading....</div>}>
+              <Benifits/>
+              </Suspense>
+             
+             <Suspense fallback={<div>Loading....</div>}>
+             <Footer/>
+             </Suspense>
+             
     
           
-    
+       
         </React.Fragment>
     );
 }

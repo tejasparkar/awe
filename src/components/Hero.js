@@ -25,7 +25,7 @@ function Hero() {
         params={{
             "particles": {
                 "number": {
-                    "value": count.height/4,
+                    "value": count.height/6,
                     "density": {
                         "enable": false
                     }

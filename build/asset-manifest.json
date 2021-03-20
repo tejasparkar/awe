@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/awe/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/awe/static/js/main.7e3ff4bf.chunk.js",
+    "main.js.map": "/awe/static/js/main.7e3ff4bf.chunk.js.map",
+    "runtime-main.js": "/awe/static/js/runtime-main.72d8a5d1.js",
+    "runtime-main.js.map": "/awe/static/js/runtime-main.72d8a5d1.js.map",
+    "static/js/2.d7529609.chunk.js": "/awe/static/js/2.d7529609.chunk.js",
+    "static/js/2.d7529609.chunk.js.map": "/awe/static/js/2.d7529609.chunk.js.map",
+    "static/js/3.6ef0b259.chunk.js": "/awe/static/js/3.6ef0b259.chunk.js",
+    "static/js/3.6ef0b259.chunk.js.map": "/awe/static/js/3.6ef0b259.chunk.js.map",
+    "index.html": "/awe/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/awe/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.d7529609.chunk.js.LICENSE.txt": "/awe/static/js/2.d7529609.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72d8a5d1.js",
+    "static/js/2.d7529609.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.7e3ff4bf.chunk.js"
+  ]
+}
