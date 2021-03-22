@@ -13,7 +13,7 @@ function getWindowDimensions() {
 function Hero() {
     const [count, setCount] = useState(getWindowDimensions());
     useEffect(() => {
-        console.log(count)
+        console.log(Math.round(count.height / 6))
     })
     return (
         <React.Fragment>
@@ -25,7 +25,7 @@ function Hero() {
         params={{
             "particles": {
                 "number": {
-                    "value": count.height/6,
+                    "value": Math.round(count.height / 4),
                     "density": {
                         "enable": false
                     }
@@ -82,7 +82,7 @@ function Hero() {
             <ScrollAnimation animatePreScroll="false" animateIn='bounceInRight'
             animateOut='bounceOutLeft'>  
             <h1 >Welcome To Andeverywhere</h1>
-            <h2 >Group of like-minded millenniel's comming together to help you get <strong>The Recognition you Deserve</strong></h2>
+            <h2 style={{ 'fontSize':'1.5rem' }} >Group of like-minded millenniel's comming together to help you get <strong>The Recognition you Deserve</strong></h2>
             
                  
                  
