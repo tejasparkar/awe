@@ -39,7 +39,7 @@ const Components = () => {
 }
 
  }}>Keyword Research</h4>
-            <p  style={{'fontWeight':'900','color':'white', 'text-shadow': '2px 2px 4px #080808' }}>Keyword phrase research involves identifying a group of keyword phrases that will be used in optimization.</p>
+            <p  style={{'fontWeight':'900','color':'white', 'text-shadow': '2px 2px 4px #080808 ' }}>Keyword phrase research involves identifying a group of keyword phrases that will be used in optimization.</p>
           </div>
             </ScrollAnimation>
              
